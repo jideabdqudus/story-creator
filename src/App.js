@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import NavbarCard from "./components/Navbar/NavbarCard";
@@ -12,10 +12,26 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavbarCard />
-        <HeaderCard />
-        <FormCard />
-        <DashTable />
-        <StoriesCard />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Fragment>
+                <HeaderCard />
+                <FormCard />
+              </Fragment>
+            )}
+          />
+          <Route
+          exact path="/stories"
+          component={StoriesCard}
+          />
+          <Route
+          exact path="/dashboard"
+          component={DashTable}
+          />
+        </Switch>
       </div>
     </BrowserRouter>
   );
