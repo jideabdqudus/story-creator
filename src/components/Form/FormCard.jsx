@@ -6,7 +6,6 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   Container,
 } from "reactstrap";
 
@@ -16,81 +15,71 @@ class FormCard extends Component {
       <Container>
         <Form>
           <FormGroup row>
-            <Label for="exampleEmail" sm={2}>
-              Email
+            <Label for="title" sm={2}>
+              Title
             </Label>
             <Col sm={10}>
               <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="with a placeholder"
+                type="text"
+                name="title"
+                id="formTitle"
+                placeholder="Story Title"
               />
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="examplePassword" sm={2}>
-              Password
+            <Label for="story" sm={2}>
+              Story
             </Label>
             <Col sm={10}>
-              <Input
-                type="password"
-                name="password"
-                id="examplePassword"
-                placeholder="password placeholder"
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup row>
-            <Label for="exampleText" sm={2}>
-              Text Area
-            </Label>
-            <Col sm={10}>
-              <Input type="textarea" name="text" id="exampleText" />
+              <Input type="textarea" name="story" id="formStory" />
             </Col>
           </FormGroup>
           <FormGroup row>
             <Label for="exampleEmail" sm={2}>
-              Email
+              Type
             </Label>
             <Col sm={10}>
               <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="with a placeholder"
+                type="text"
+                name="type"
+                id="formType"
+                placeholder="Story Type"
               />
             </Col>
           </FormGroup>
           <FormGroup row>
             <Label for="exampleEmail" sm={2}>
-              Email
+              Average Words
             </Label>
             <Col sm={10}>
               <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="with a placeholder"
+                type="number"
+                name="words"
+                id="formWords"
+                placeholder="Average number of words"
               />
             </Col>
           </FormGroup>
           <FormGroup row>
             <Label for="exampleEmail" sm={2}>
-              Email
+              Cost:
             </Label>
             <Col sm={10}>
               <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="with a placeholder"
+                type="number"
+                name="cost"
+                id="formCost"
+                placeholder="Story Cost"
               />
             </Col>
           </FormGroup>
+
           <FormGroup check row>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Submit</Button>
+              <Button color="primary" block>
+                Submit
+              </Button>
             </Col>
           </FormGroup>
         </Form>

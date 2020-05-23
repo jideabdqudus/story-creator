@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table, Container} from "reactstrap"
+import {Table, Container, Button} from "reactstrap"
 
 const DashTable = () => {
     return (
@@ -8,41 +8,24 @@ const DashTable = () => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
+            <th>Title</th>
+            <th>Story</th>
+            <th>Type</th>
+            <th>Average Words</th>
+            <th>Cost</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
+            <td>Massacre in Munich</td>
+            <td>Lore Ipsum Dolor sit Amet</td>
+            <td>Sport Journo</td>
+            <td>3000</td>
+            <td>$2</td>
+            <td>Read</td>
+            <td><Button sm color="primary"></Button></td>
           </tr>
         </tbody>
       </Table>
