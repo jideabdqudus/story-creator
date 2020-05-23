@@ -27,10 +27,10 @@ const NavbarCard = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="#!">Stories</NavLink>
+              <NavLink href="/stories">Stories</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#!">
+              <NavLink href="/dashboard">
                 Dashboard
               </NavLink>
             </NavItem>
