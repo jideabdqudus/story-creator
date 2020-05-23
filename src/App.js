@@ -9,7 +9,7 @@ import StoriesCard from "./components/Stories/StoriesCard";
 
 class App extends Component {
   state = {
-    story: [
+    stories: [
       {
         id: 1,
         title: "Massacre in Stamford",
@@ -38,7 +38,7 @@ class App extends Component {
   };
 
   render() {
-    const { story } = this.state;
+    const { stories } = this.state;
     return (
       <BrowserRouter>
         <div className="App">
@@ -59,11 +59,19 @@ class App extends Component {
               path="/stories"
               render={() => (
                 <Fragment>
-                  <StoriesCard story={story} />
+                  <StoriesCard stories={stories} />
                 </Fragment>
               )}
             />
-            <Route exact path="/dashboard" component={DashTable} />
+            <Route
+              exact
+              path="/dashboard"
+              render={() => (
+                <Fragment>
+                  <DashTable stories={stories} />
+                </Fragment>
+              )}
+            />
           </Switch>
         </div>
       </BrowserRouter>

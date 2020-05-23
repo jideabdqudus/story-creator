@@ -1,36 +1,32 @@
-import React from 'react'
-import {Table, Container, Button} from "reactstrap"
+import React, { Component } from "react";
+import { Table, Container } from "reactstrap";
+import DashTableBody from "./DashTableBody";
 
-const DashTable = () => {
+class DashTable extends Component {
+  render() {
+    console.log(this.props.stories);
     return (
-        <Container>
+      <Container>
         <Table responsive>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Story</th>
-            <th>Type</th>
-            <th>Average Words</th>
-            <th>Cost</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Massacre in Munich</td>
-            <td>Lore Ipsum Dolor sit Amet</td>
-            <td>Sport Journo</td>
-            <td>3000</td>
-            <td>$2</td>
-            <td>Read</td>
-            <td><Button sm color="primary"></Button></td>
-          </tr>
-        </tbody>
-      </Table>
-        </Container>
-    )
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Story</th>
+              <th>Type</th>
+              <th>Average Words</th>
+              <th>Cost</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+          {this.props.stories.map((story)=>(
+              <DashTableBody/>
+          ))}
+          </tbody>
+        </Table>
+      </Container>
+    );
+  }
 }
-
-export default DashTable
+export default DashTable;
