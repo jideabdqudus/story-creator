@@ -38,7 +38,7 @@ class App extends Component {
   };
 
   render() {
-    const {story} = this.state
+    const { story } = this.state;
     return (
       <BrowserRouter>
         <div className="App">
@@ -57,7 +57,7 @@ class App extends Component {
             <Route
               exact
               path="/stories"
-              render={()=>(
+              render={() => (
                 <Fragment>
                   <StoriesCard story={story} />
                 </Fragment>
