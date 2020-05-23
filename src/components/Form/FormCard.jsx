@@ -10,6 +10,16 @@ import {
 } from "reactstrap";
 
 class FormCard extends Component {
+  state = {
+    stories: {
+      title: "",
+      detail: "",
+      type: "",
+      words: "",
+      cost: "",
+    },
+  };
+
   render() {
     return (
       <Container>

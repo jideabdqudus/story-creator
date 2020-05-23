@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Table, Container } from "reactstrap";
+import { Table, Container, Button } from "reactstrap";
 import DashTableBody from "./DashTableBody";
 
 class DashTable extends Component {
   render() {
-    console.log(this.props.stories);
     return (
       <Container>
         <Table responsive>
@@ -19,11 +18,20 @@ class DashTable extends Component {
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
-          {this.props.stories.map((story)=>(
-              <DashTableBody/>
+
+          {this.props.stories.map((story) => (
+            <tbody key={story.id}>
+              <td>{story.id}</td>
+              <td>{story.title}</td>
+              <td>{story.detail}</td>
+              <td>{story.type}</td>
+              <td>{story.words}</td>
+              <td>{story.cost}</td>
+              <td>
+                <Button sm color="primary"></Button>
+              </td>
+            </tbody>
           ))}
-          </tbody>
         </Table>
       </Container>
     );
