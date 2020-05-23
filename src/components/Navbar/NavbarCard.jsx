@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import styles from "./NavbarCard.module.css"
 
 const NavbarCard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ const NavbarCard = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className={styles.spacing}>
       <Navbar color="primary" light expand="md">
         <NavbarBrand href="/">Story-Creator</NavbarBrand>
         <NavbarToggler onClick={toggle} />
