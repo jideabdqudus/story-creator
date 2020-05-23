@@ -3,6 +3,7 @@ import './App.css';
 import NavbarCard from './components/Navbar/NavbarCard';
 import HeaderCard from './components/Header/HeaderCard';
 import FormCard from './components/Form/FormCard';
+import DashTable from './components/Dashboard/DashTable';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <NavbarCard/>
       <HeaderCard/>
       <FormCard/>
+      <DashTable/>
     </div>
   );
 }

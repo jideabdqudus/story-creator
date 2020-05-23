@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import { Col, Button, Form, FormGroup, Label, Input, FormText, Container } from 'reactstrap';
+import {
+  Col,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText,
+  Container,
+} from "reactstrap";
 
 class FormCard extends Component {
   render() {
