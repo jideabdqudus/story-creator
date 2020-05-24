@@ -20,7 +20,13 @@ class FormCard extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.formSubmit(this.state);
+    this.props.formSubmit(
+      this.state.title,
+      this.state.detail,
+      this.state.type,
+      this.state.words,
+      this.state.cost
+    );
     this.setState({
       title: "",
       detail: "",

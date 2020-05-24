@@ -62,6 +62,7 @@ class App extends Component {
                 <Fragment>
                   <HeaderCard />
                   <FormCard formSubmit={this.formSubmit} />
+                  <DashTable stories={stories}/>
                 </Fragment>
               )}
             />
