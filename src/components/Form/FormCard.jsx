@@ -21,7 +21,7 @@ class FormCard extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.formSubmit(this.state);
-    this.state({
+    this.setState({
       title: "",
       detail: "",
       type: "",
@@ -32,11 +32,7 @@ class FormCard extends Component {
 
   inputChange = (e) => {
     this.setState({
-      title: e.target.value,
-      detail: e.target.value,
-      type: e.target.value,
-      words: e.target.value,
-      cost: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -44,7 +40,7 @@ class FormCard extends Component {
     const { title, detail, type, words, cost } = this.state;
     return (
       <Container>
-        <Form onSubmit={this.formSubmit}>
+        <Form onSubmit={this.onSubmit}>
           <FormGroup row>
             <Label for="title" sm={2}>
               Title
