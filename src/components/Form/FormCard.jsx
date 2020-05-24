@@ -15,7 +15,7 @@ class FormCard extends Component {
     detail: "",
     type: "",
     words: "",
-    cost: "",
+    cost: ""
   };
 
   onSubmit = (e) => {
