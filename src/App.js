@@ -37,6 +37,17 @@ class App extends Component {
     ],
   };
 
+  formSubmit = (title, detail, type, words, cost) => {
+    const newStory={
+      id: 4,
+      title,
+      detail, 
+      type,
+      words,
+      cost,
+    }
+    this.setState({ stories: [...this.state.stories, newStory] });
+  };
   render() {
     const { stories } = this.state;
     return (
@@ -50,7 +61,7 @@ class App extends Component {
               render={(props) => (
                 <Fragment>
                   <HeaderCard />
-                  <FormCard />
+                  <FormCard formSubmit={this.formSubmit} />
                 </Fragment>
               )}
             />

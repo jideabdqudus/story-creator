@@ -11,19 +11,40 @@ import {
 
 class FormCard extends Component {
   state = {
-    stories: {
+    title: "",
+    detail: "",
+    type: "",
+    words: "",
+    cost: "",
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.formSubmit(this.state);
+    this.state({
       title: "",
       detail: "",
       type: "",
       words: "",
       cost: "",
-    },
+    });
+  };
+
+  inputChange = (e) => {
+    this.setState({
+      title: e.target.value,
+      detail: e.target.value,
+      type: e.target.value,
+      words: e.target.value,
+      cost: e.target.value,
+    });
   };
 
   render() {
+    const { title, detail, type, words, cost } = this.state;
     return (
       <Container>
-        <Form>
+        <Form onSubmit={this.formSubmit}>
           <FormGroup row>
             <Label for="title" sm={2}>
               Title
@@ -32,6 +53,8 @@ class FormCard extends Component {
               <Input
                 type="text"
                 name="title"
+                value={title}
+                onChange={this.inputChange}
                 id="formTitle"
                 placeholder="Story Title"
               />
@@ -42,7 +65,13 @@ class FormCard extends Component {
               Story
             </Label>
             <Col sm={10}>
-              <Input type="textarea" name="story" id="formStory" />
+              <Input
+                type="textarea"
+                value={detail}
+                onChange={this.inputChange}
+                name="detail"
+                id="formDetail"
+              />
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -53,6 +82,8 @@ class FormCard extends Component {
               <Input
                 type="text"
                 name="type"
+                value={type}
+                onChange={this.inputChange}
                 id="formType"
                 placeholder="Story Type"
               />
@@ -66,6 +97,8 @@ class FormCard extends Component {
               <Input
                 type="number"
                 name="words"
+                value={words}
+                onChange={this.inputChange}
                 id="formWords"
                 placeholder="Average number of words"
               />
@@ -79,6 +112,8 @@ class FormCard extends Component {
               <Input
                 type="number"
                 name="cost"
+                value={cost}
+                onChange={this.inputChange}
                 id="formCost"
                 placeholder="Story Cost"
               />
@@ -87,7 +122,7 @@ class FormCard extends Component {
 
           <FormGroup check row>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button color="primary" block>
+              <Button color="primary" type="submit" block>
                 Submit
               </Button>
             </Col>

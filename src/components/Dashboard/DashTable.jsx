@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Table, Container, Button } from "reactstrap";
-import DashTableBody from "./DashTableBody";
 
 class DashTable extends Component {
   render() {
